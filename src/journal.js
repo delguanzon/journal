@@ -29,7 +29,6 @@ Entry.prototype.getVowelConsCount = function () {
         isNotVowel = false;
       }
     });
-
     if(isNotVowel) {
       ctrCons++;
       
@@ -37,3 +36,18 @@ Entry.prototype.getVowelConsCount = function () {
   });
   return "Vowels: " + ctrVowel + ", Consonants: " + ctrCons;
 };
+
+Entry.prototype.getTeaser = function() {
+  
+  let sens = this.body.split(/([!.?])+/g);
+  let firstSens = sens[0];
+  let text = [];
+
+  if(firstSens.split(" ").length > 8) {
+    for(let i = 0; i < 8 ; i++) {
+      text.push(firstSens.split(" ")[i]);
+    }
+    return text.join(" ");    
+  }
+  return firstSens;
+}

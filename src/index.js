@@ -12,6 +12,10 @@ function handleInput(event) {
 
   let vowelElement = document.getElementById("vowel-count");
   vowelElement.replaceChildren(entry.getVowelConsCount(passage));
+
+  let firstElement = document.getElementById("first");
+  firstElement.replaceChildren(entry.getTeaser());
+  ;
 }
 
 let form = document.getElementById("input-form");
